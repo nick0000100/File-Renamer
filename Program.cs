@@ -21,7 +21,12 @@ namespace File_Renamer
             while ((Line = Console.ReadLine()) != null) {
                 Names.Add(Line);
             }
-            Names = Flipper(Names);
+            System.Console.WriteLine(@"Are the names in ""Last, First"" (Y/N)");
+            // String Order = Console.ReadLine();
+            if(Console.ReadLine().ToUpper() == "Y")
+            {
+                Names = Flipper(Names);
+            }
 
             // Get the directory and the files to rename
             System.Console.WriteLine("Enter folder path.");
@@ -68,7 +73,7 @@ namespace File_Renamer
                     if(Name[i].ToString() == ",")
                     {
                         Switch = true;
-                        i+=2;
+                        i++;
                     }
                     if(!Switch)
                     {
@@ -79,7 +84,7 @@ namespace File_Renamer
                         NameTwo += Name[i];
                     }
                 }
-                String Reversed = $"{NameTwo}, {NameOne}";
+                String Reversed = $"{NameTwo}, {NameOne}".Trim();
                 ReversedNames.Add(Reversed);
             }
             return ReversedNames;
