@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace File_Renamer
 {
@@ -20,6 +21,7 @@ namespace File_Renamer
             while ((Line = Console.ReadLine()) != null) {
                 Names.Add(Line);
             }
+            Names = Flipper(Names);
 
             // Get the directory and the files to rename
             System.Console.WriteLine("Enter folder path.");
@@ -30,7 +32,7 @@ namespace File_Renamer
             FileInfo[] Files = dir.GetFiles();
             foreach(FileInfo CurrentFile in Files)
             {
-                String FileName = Path.GetFileNameWithoutExtension(CurrentFile.FullName);
+                String FileName = Regex.Replace(Path.GetFileNameWithoutExtension(CurrentFile.FullName), @"[_0-9]+", "");
                 String Ex =  Path.GetExtension(CurrentFile.FullName);
 
                 foreach(String Name in Names)
@@ -47,9 +49,40 @@ namespace File_Renamer
                             NewFileName = CurrentFile.FullName.Replace(CurrentFile.Name, TempFileName);
                         }
                         File.Move(CurrentFile.FullName, NewFileName);
+                        break;
                     }
                 }
             }
+        }
+
+        public static List<String> Flipper(List<String> Names)
+        {
+            List<String> ReversedNames = new List<String>();
+            foreach(String Name in Names)
+            {
+                String NameOne = "";
+                String NameTwo = "";
+                Boolean Switch = false;
+                for(int i = 0; i < Name.Length; i++)
+                {
+                    if(Name[i].ToString() == ",")
+                    {
+                        Switch = true;
+                        i+=2;
+                    }
+                    if(!Switch)
+                    {
+                        NameOne += Name[i];
+                    }
+                    else
+                    {
+                        NameTwo += Name[i];
+                    }
+                }
+                String Reversed = $"{NameTwo}, {NameOne}";
+                ReversedNames.Add(Reversed);
+            }
+            return ReversedNames;
         }
     }
 }
