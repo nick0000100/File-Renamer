@@ -1,0 +1,11 @@
+C:\Users\v-nisor\Desktop\File-Renamer\bin\Release\netcoreapp2.0\File Renamer.deps.json
+C:\Users\v-nisor\Desktop\File-Renamer\bin\Release\netcoreapp2.0\File Renamer.runtimeconfig.json
+C:\Users\v-nisor\Desktop\File-Renamer\bin\Release\netcoreapp2.0\File Renamer.runtimeconfig.dev.json
+C:\Users\v-nisor\Desktop\File-Renamer\bin\Release\netcoreapp2.0\File Renamer.dll
+C:\Users\v-nisor\Desktop\File-Renamer\bin\Release\netcoreapp2.0\File Renamer.pdb
+C:\Users\v-nisor\Desktop\File-Renamer\obj\Release\netcoreapp2.0\File Renamer.csprojAssemblyReference.cache
+C:\Users\v-nisor\Desktop\File-Renamer\obj\Release\netcoreapp2.0\File Renamer.csproj.CoreCompileInputs.cache
+C:\Users\v-nisor\Desktop\File-Renamer\obj\Release\netcoreapp2.0\File Renamer.AssemblyInfoInputs.cache
+C:\Users\v-nisor\Desktop\File-Renamer\obj\Release\netcoreapp2.0\File Renamer.AssemblyInfo.cs
+C:\Users\v-nisor\Desktop\File-Renamer\obj\Release\netcoreapp2.0\File Renamer.dll
+C:\Users\v-nisor\Desktop\File-Renamer\obj\Release\netcoreapp2.0\File Renamer.pdb

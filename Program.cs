@@ -70,7 +70,7 @@ namespace File_Renamer
                         // Checks to see if a file with the same name exists.
                         while(File.Exists(NewFileName))
                         {
-                            String TempFileName = $"{TempName} ({Count++}){Ex}";
+                            String TempFileName = $"{TempName} ({++Count}){Ex}";
                             NewFileName = CurrentFile.FullName.Replace(CurrentFile.Name, TempFileName);
                         }
                         File.Move(CurrentFile.FullName, NewFileName);
